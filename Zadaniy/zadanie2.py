@@ -1,23 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Решить поставленную задачу:
+написать функцию, вычисляющую среднее гармоническое
+своих аргументов a1, a2, ... an
+Если функции передается пустой список аргументов,
+то она должна возвращать значение  None
+"""
 
-def mean(*arg):
-    if 0 in arg:
-        return "Имеется нуль"
+
+def harmonic_mean(*arg):
+    x = 0
     if arg:
-        n = len(arg)
-        h = 0.0
         for i in arg:
-            h += 1/i
-        h = n / h
-        return h
-
+            if i == 0:
+                return None
+            else:
+                x += 1 / float(i)
+        harmonic = 1 / (1 / len(arg) * x)
+        return harmonic
     else:
         return None
 
 
 if __name__ == '__main__':
-    print("Введите числа через пробел: ")
+    print('Введите список аргументов: ')
     array = list(map(float, input().split()))
-    print("Среднее гармоническое элементов: ", mean(*array))
+    print(harmonic_mean(*array))

@@ -15,6 +15,8 @@
 def min_max(*args):
 
     # Результат
+    if len(args) == 0:
+        return None
     composition = 1
 
     # Индекс и item для максимального
