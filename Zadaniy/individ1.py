@@ -37,6 +37,4 @@ def min_max(*args):
 
 if __name__ == '__main__':
     arg = list(map(float, input('Введите список аргументов: ').split()))
-    print("Произведение аргументов, расположенных"
-          " после максимального: ",
-          min_max(*arg))
+    print(min_max(*arg))
